@@ -1,0 +1,20 @@
+syntax = "proto3";
+package zkp;
+
+service ZkpAuth {
+    rpc Vote (ZkpAuthRequest) returns (ZkpAuthResponse);
+}
+
+message ZkpAuthRequest {
+    string url = 1;
+
+    enum Vote {
+        UP = 0;
+        DOWN = 1;
+    }
+    Vote vote = 2;    
+}
+
+message ZkpAuthResponse {
+    string confirmation = 1;
+}
