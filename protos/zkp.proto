@@ -1,20 +1,39 @@
 syntax = "proto3";
-package zkp;
+package zkp_auth;
 
-service ZkpAuth {
-    rpc Vote (ZkpAuthRequest) returns (ZkpAuthResponse);
+message RegisterRequest {
+    string user = 1;
+    string y1 = 2;
+    string y2 = 3;
 }
 
-message ZkpAuthRequest {
-    string url = 1;
+message RegisterResponse {}
 
-    enum Vote {
-        UP = 0;
-        DOWN = 1;
-    }
-    Vote vote = 2;    
+message AuthenticationChallengeRequest {
+    string user = 1;
+    string r1 = 2;
+    string r2 = 3;
 }
 
-message ZkpAuthResponse {
-    string confirmation = 1;
+message AuthenticationChallengeResponse {
+    string auth_id = 1;
+    string c = 2;
 }
+
+message AuthenticationAnswerRequest {
+    string auth_id = 1;
+    string s = 2;
+}
+
+message AuthenticationAnswerResponse {
+    string session_id = 1;
+}
+
+service Auth {
+    rpc Register(RegisterRequest) returns (RegisterResponse) {}
+    rpc CreateAuthenticationChallenge(AuthenticationChallengeRequest) returns (AuthenticationChallengeResponse) {}
+    rpc VerifyAuthentication(AuthenticationAnswerRequest) returns (AuthenticationAnswerResponse) {}
+}
+
+
+

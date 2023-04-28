@@ -20,5 +20,3 @@ pub fn public_params() -> (BigInt, BigInt, i32, i32) {
         4
     )
 }
-
-pub const DATABASE_URL: &str = "postgres://postgres:postgres@localhost/zkpauth";
