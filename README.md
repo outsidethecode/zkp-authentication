@@ -20,3 +20,4 @@ This repo contains two projects: client and server.
 3. Run the client 
           ``` /client$ cargo run ```
 
+![image](https://user-images.githubusercontent.com/49871473/235252373-eba0c5f7-3f32-4fca-b7a6-340367b4f324.png)
