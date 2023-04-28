@@ -11,10 +11,12 @@ The ZKP protocol is described in the book "Cryptography: An Introduction (3rd Ed
 This repo contains two projects: client and server.
 
 ## Run the applicaton
-1. Launch Postgres database. The url of the database is configured in the file server/src/parameters.rs via the parameter DATABASE_URL.
-2. Run the server
-``` /server$ cargo run ```
-3. Run the client 
-``` /client$ cargo run ```
 
+1. Launch Postgres database. The url of the database is configured in the file server/src/parameters.rs via the parameter DATABASE_URL.
+
+2. Run the server
+          ``` /server$ cargo run ```
+
+3. Run the client 
+          ``` /client$ cargo run ```
 
